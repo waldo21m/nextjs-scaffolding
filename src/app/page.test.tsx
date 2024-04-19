@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import Page from '../src/app/page';
+import Page from './page';
 
 test("Check if the text 'Get started by editing' is defined", () => {
 	expect.hasAssertions();
