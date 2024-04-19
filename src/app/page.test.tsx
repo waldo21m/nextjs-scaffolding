@@ -1,10 +1,13 @@
-import { expect, test } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '../utils/test-utils';
 import Page from './page';
 
-test("Check if the text 'Get started by editing' is defined", () => {
-	expect.hasAssertions();
-	render(<Page />);
-	expect(screen.getByText(/get started by editing/i)).not.toBeNull();
-	// expect(screen.getByRole("heading", { level: 1, name: "Home" })).toBeDefined();
+describe('Page', () => {
+	it('Render Page component and click in count button', async () => {
+		expect.hasAssertions();
+		render(<Page />);
+		expect(screen.getByText(/count is 0/i)).not.toBeNull();
+    const countBtn = await screen.findByRole("button", { name: "count is 0" });
+    fireEvent.click(countBtn);
+		expect(screen.getByText(/count is 1/i)).not.toBeNull();
+	});
 });

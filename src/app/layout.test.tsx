@@ -1,5 +1,5 @@
 import { vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../utils/test-utils';
 import RootLayout from './layout';
 
 vi.mock('next/font/google', () => ({
