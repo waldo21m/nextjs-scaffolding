@@ -1,13 +1,19 @@
 import { fireEvent, render, screen } from '../utils/test-utils';
 import Page from './page';
 
-describe('Page', () => {
-	it('Render Page component and click in count button', async () => {
+describe('Simple working test', () => {
+	it('The title Next.js is visible', () => {
 		expect.hasAssertions();
 		render(<Page />);
-		expect(screen.getByText(/count is 0/i)).not.toBeNull();
-    const countBtn = await screen.findByRole("button", { name: "count is 0" });
-    fireEvent.click(countBtn);
-		expect(screen.getByText(/count is 1/i)).not.toBeNull();
+		expect(screen.getByText(/next.js/i)).toBeInTheDocument();
+	});
+
+	it('Should increment count on click', () => {
+		expect.hasAssertions();
+		render(<Page />);
+		const button = screen.getByText(/count is/i);
+		expect(button).toBeInTheDocument();
+		fireEvent.click(button);
+		expect(screen.getByText(/count is 1/i)).toBeInTheDocument();
 	});
 });
