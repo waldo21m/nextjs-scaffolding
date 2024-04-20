@@ -1,5 +1,5 @@
-import { fireEvent, render, screen } from '../utils/test-utils';
 import Page from './page';
+import { fireEvent, render, screen } from '../utils/test-utils';
 
 describe('Simple working test', () => {
 	it('The title Next.js is visible', () => {

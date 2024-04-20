@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useAppDispatch } from '../lib/hooks';
 import { incrementByAmount, usePageSelector } from '../lib/features/pageSlice';
 import './page.css';
