@@ -14,6 +14,7 @@ const Home = () => {
 			<div className='card'>
 				<Button
 					variant='contained'
+					color='secondary'
 					onClick={() => dispatch(incrementByAmount(1))}
 				>
 					count is {count}
