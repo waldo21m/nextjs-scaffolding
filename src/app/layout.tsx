@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
+import { CssBaseline } from '@mui/material';
 import ThemeProviderNext from './ThemeProviderNext';
 import StoreProvider from './StoreProvider';
 import './globals.css';
@@ -24,7 +25,10 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={inter.className}>
 				<StoreProvider>
-					<ThemeProviderNext>{children}</ThemeProviderNext>
+					<ThemeProviderNext>
+						<CssBaseline />
+						{children}
+					</ThemeProviderNext>
 				</StoreProvider>
 			</body>
 		</html>
